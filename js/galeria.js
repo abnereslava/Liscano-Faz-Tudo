@@ -61,22 +61,32 @@
             galGrid.appendChild(img);
         });
         galGrid.scrollTop = 0;
+        // Entrada no historico: o botao "voltar" do celular fecha a galeria
+        history.pushState({ galeria: slug }, '');
         modal.classList.add('aberto');
         document.body.style.overflow = 'hidden';
     }
-    function fecharGaleria() {
+    // Esconde de fato (usado pelo popstate). A UI chama fecharGaleria() -> history.back()
+    function hideGaleria() {
         modal.classList.remove('aberto');
         document.body.style.overflow = '';
+    }
+    function fecharGaleria() {
+        if (modal.classList.contains('aberto')) history.back();
     }
 
     // ---- Lightbox ----
     function abrirLightbox(i) {
         indiceAtual = i;
         atualizarLightbox();
+        // Nova entrada no historico: "voltar" fecha a foto antes da galeria
+        history.pushState({ lightbox: true }, '');
         lightbox.classList.add('aberto');
     }
     function atualizarLightbox() {
         const foto = categoriaAtual[indiceAtual];
+        plImg.style.opacity = '0';
+        plImg.onload = () => { plImg.style.opacity = '1'; };
         plImg.src = foto.full;
         plImg.alt = foto.alt;
         plContador.textContent = (indiceAtual + 1) + ' / ' + categoriaAtual.length;
@@ -85,7 +95,10 @@
         indiceAtual = (indiceAtual + dir + categoriaAtual.length) % categoriaAtual.length;
         atualizarLightbox();
     }
-    function fecharLightbox() { lightbox.classList.remove('aberto'); }
+    function hideLightbox() { lightbox.classList.remove('aberto'); }
+    function fecharLightbox() {
+        if (lightbox.classList.contains('aberto')) history.back();
+    }
 
     // ---- Eventos ----
     document.getElementById('galFechar').addEventListener('click', fecharGaleria);
@@ -105,4 +118,27 @@
             fecharGaleria();
         }
     });
+
+    // Botao "voltar" do celular: fecha a foto/galeria em vez de sair do site
+    window.addEventListener('popstate', () => {
+        if (lightbox.classList.contains('aberto')) hideLightbox();
+        else if (modal.classList.contains('aberto')) hideGaleria();
+    });
+
+    // Swipe para o lado navega entre as fotos no lightbox (mobile)
+    let touchStartX = 0, touchStartY = 0;
+    lightbox.addEventListener('touchstart', (e) => {
+        const t = e.changedTouches[0];
+        touchStartX = t.clientX;
+        touchStartY = t.clientY;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+        const t = e.changedTouches[0];
+        const dx = t.clientX - touchStartX;
+        const dy = t.clientY - touchStartY;
+        // Swipe horizontal claro (ignora rolagem vertical / toques pequenos)
+        if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+            navLightbox(dx < 0 ? 1 : -1);
+        }
+    }, { passive: true });
 })();

@@ -949,7 +949,7 @@ img {
     align-items: center; justify-content: center;
 }
 .galeria-lightbox.aberto { display: flex; }
-.galeria-lightbox img { max-width: 90%; max-height: 85vh; border-radius: 8px; }
+.galeria-lightbox img { max-width: 90%; max-height: 85vh; border-radius: 8px; transition: opacity .25s ease; }
 .pl-fechar { position: absolute; top: 24px; right: 32px; color: #fff; font-size: 2.6rem; cursor: pointer; }
 .pl-nav {
     position: absolute; top: 50%; transform: translateY(-50%);
