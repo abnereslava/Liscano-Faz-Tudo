@@ -716,8 +716,16 @@ img {
     font-size: 2rem;
     box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
     z-index: 1000;
-    transition: var(--transition);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease, background-color 0.3s ease;
     animation: bounce 2s infinite;
+}
+
+/* Oculto enquanto o hero estiver visivel (fade elegante) */
+.floating-whatsapp.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.6);
+    pointer-events: none;
 }
 
 .floating-whatsapp:hover {

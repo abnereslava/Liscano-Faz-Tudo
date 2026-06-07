@@ -82,6 +82,34 @@ function resetInterval() {
     }, 5000);
 }
 
+// Esconde o botao flutuante do WhatsApp enquanto o hero estiver visivel
+const floatingWhatsapp = document.querySelector('.floating-whatsapp');
+const heroSection = document.querySelector('.hero');
+
+if (floatingWhatsapp && heroSection) {
+    // Comeca oculto (a pagina abre no hero), evitando "flash" do botao
+    floatingWhatsapp.classList.add('is-hidden');
+
+    if ('IntersectionObserver' in window) {
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // Visivel no hero -> esconde; fora do hero -> mostra (com fade)
+                floatingWhatsapp.classList.toggle('is-hidden', entry.isIntersecting);
+            });
+        }, { threshold: 0.35 });
+
+        heroObserver.observe(heroSection);
+    } else {
+        // Fallback para navegadores sem IntersectionObserver
+        const toggleByScroll = () => {
+            const heroVisivel = window.scrollY < heroSection.offsetHeight * 0.65;
+            floatingWhatsapp.classList.toggle('is-hidden', heroVisivel);
+        };
+        window.addEventListener('scroll', toggleByScroll);
+        toggleByScroll();
+    }
+}
+
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
