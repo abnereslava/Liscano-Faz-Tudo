@@ -5,7 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
         easing: 'ease-in-out',
         once: true,
         mirror: false,
-        offset: 50
+        offset: 50,
+        // Desativa as animações (que deslocam elementos na horizontal) em
+        // telas pequenas para evitar overflow horizontal no mobile.
+        disable: window.innerWidth < 768
     });
 });
 
