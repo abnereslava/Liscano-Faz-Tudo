@@ -864,10 +864,10 @@ img {
 .st-card::before {
     content: '';
     position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(11,11,11,.92) 0%, rgba(11,11,11,.45) 45%, rgba(11,11,11,.05) 100%);
+    background: linear-gradient(to top, rgba(11,11,11,.95) 0%, rgba(11,11,11,.88) 35%, rgba(11,11,11,.55) 65%, rgba(11,11,11,.1) 100%);
     transition: var(--transition);
 }
-.st-card:hover::before { background: linear-gradient(to top, rgba(11,11,11,.95) 0%, rgba(11,11,11,.6) 55%, rgba(11,11,11,.2) 100%); }
+.st-card:hover::before { background: linear-gradient(to top, rgba(11,11,11,.97) 0%, rgba(11,11,11,.92) 45%, rgba(11,11,11,.65) 75%, rgba(11,11,11,.25) 100%); }
 
 .st-card-body { position: relative; z-index: 1; padding: 24px; }
 
