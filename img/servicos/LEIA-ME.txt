@@ -1,0 +1,43 @@
+COMO MANTER A GALERIA DO SITE
+=============================
+
+Voce so mexe AQUI (img/servicos), nestas pastas de categoria. O resto
+(thumbs, full, manifest) o codigo gera sozinho.
+
+As fotos sao exibidas em ORDEM NUMERICA. Nomeie-as 1.jpg, 2.jpg, 3.jpg...
+na ordem que quiser que apareçam.
+
+PASTAS DE CATEGORIA (aparecem na galeria do site, nesta ordem):
+  montagem-moveis/
+  hidraulica/
+  eletrica/
+  pintura/
+  cortinas-persianas/
+  prateleiras-suportes/
+
+  _revisar/  -> NAO aparece no site. Guarde aqui o que ainda nao decidiu.
+
+PARA ADICIONAR FOTOS:
+  Copie as fotos (jpg/jpeg/png) para a pasta da categoria certa.
+
+PARA REMOVER FOTOS:
+  Apague o arquivo da pasta. Pronto.
+
+PARA O SITE ATUALIZAR:
+  Opcao A (recomendada enquanto organiza):
+     Abra o terminal na pasta do site e rode:  npm run dev
+     Deixe rodando. Cada foto que voce adiciona/remove e processada na hora.
+     Depois e so atualizar o navegador (Ctrl+F5).
+
+  Opcao B (uma vez so, antes de publicar):
+     Rode:  npm run otimizar
+
+CATEGORIA SEM FOTO:
+  Aparece no site como "Em breve" automaticamente. Assim que voce colocar
+  a 1a foto na pasta, ela vira galeria normal.
+
+CRIAR UMA CATEGORIA NOVA:
+  1) Crie a pasta aqui (ex: marcenaria/)
+  2) Adicione a categoria em scripts/build-galeria.js (objeto CATS), com
+     label, icone e descricao.
+  3) Rode npm run dev (ou npm run otimizar).

@@ -1,0 +1,204 @@
+// Gerado automaticamente — nao editar a mao. Rode `npm run otimizar` ou `npm run dev`.
+window.PORTFOLIO = {
+  "montagem-moveis": {
+    "label": "Montagem de Móveis",
+    "icon": "bx-wrench",
+    "desc": "Montagem e desmontagem de móveis em geral com perfeição e cuidado.",
+    "embreve": false,
+    "fotos": [
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__1-426cae.webp",
+        "full": "img/portfolio/full/montagem-moveis__1-426cae.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__2-69b7d8.webp",
+        "full": "img/portfolio/full/montagem-moveis__2-69b7d8.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__3-6221a9.webp",
+        "full": "img/portfolio/full/montagem-moveis__3-6221a9.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__4-e80aec.webp",
+        "full": "img/portfolio/full/montagem-moveis__4-e80aec.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__5-52ac05.webp",
+        "full": "img/portfolio/full/montagem-moveis__5-52ac05.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__6-68f02d.webp",
+        "full": "img/portfolio/full/montagem-moveis__6-68f02d.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__7-079022.webp",
+        "full": "img/portfolio/full/montagem-moveis__7-079022.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__8-780eaf.webp",
+        "full": "img/portfolio/full/montagem-moveis__8-780eaf.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__9-74fc48.webp",
+        "full": "img/portfolio/full/montagem-moveis__9-74fc48.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__10-081e1f.webp",
+        "full": "img/portfolio/full/montagem-moveis__10-081e1f.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__11-a3520c.webp",
+        "full": "img/portfolio/full/montagem-moveis__11-a3520c.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__12-8f1aca.webp",
+        "full": "img/portfolio/full/montagem-moveis__12-8f1aca.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__13-0245f2.webp",
+        "full": "img/portfolio/full/montagem-moveis__13-0245f2.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/montagem-moveis__14-06c11e.webp",
+        "full": "img/portfolio/full/montagem-moveis__14-06c11e.webp",
+        "alt": "Montagem de Móveis - Liscano Faz Tudo"
+      }
+    ]
+  },
+  "eletrica-hidraulica": {
+    "label": "Elétrica e Hidráulica",
+    "icon": "bx-bolt-circle",
+    "desc": "Tomadas, chuveiros, lâmpadas, vazamentos, torneiras e instalações básicas.",
+    "embreve": true,
+    "fotos": []
+  },
+  "pintura": {
+    "label": "Pintura",
+    "icon": "bx-paint-roll",
+    "desc": "Pequenos retoques e pintura de ambientes internos e externos.",
+    "embreve": false,
+    "fotos": [
+      {
+        "thumb": "img/portfolio/thumbs/pintura__1-80d8c2.webp",
+        "full": "img/portfolio/full/pintura__1-80d8c2.webp",
+        "alt": "Pintura - Liscano Faz Tudo"
+      }
+    ]
+  },
+  "cortinas-persianas": {
+    "label": "Cortinas e Persianas",
+    "icon": "bx-window",
+    "desc": "Instalação de varões, persianas rolo, romana e modelos diversos.",
+    "embreve": true,
+    "fotos": []
+  },
+  "prateleiras-suportes": {
+    "label": "Prateleiras e Suportes",
+    "icon": "bx-layer",
+    "desc": "Instalação segura de prateleiras, nichos e suportes para TV.",
+    "embreve": false,
+    "fotos": [
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__1-1e2b14.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__1-1e2b14.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__2-929fc2.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__2-929fc2.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__3-491c39.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__3-491c39.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__4-82dfd4.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__4-82dfd4.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__5-99ff05.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__5-99ff05.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__6-302ad0.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__6-302ad0.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__7-35fcba.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__7-35fcba.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__8-82d63b.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__8-82d63b.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__9-18d750.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__9-18d750.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__10-617a78.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__10-617a78.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__11-7df034.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__11-7df034.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/prateleiras-suportes__12-70924e.webp",
+        "full": "img/portfolio/full/prateleiras-suportes__12-70924e.webp",
+        "alt": "Prateleiras e Suportes - Liscano Faz Tudo"
+      }
+    ]
+  },
+  "outros": {
+    "label": "Outros Serviços",
+    "icon": "bx-category",
+    "desc": "Outros trabalhos e serviços de manutenção realizados sob medida.",
+    "embreve": false,
+    "fotos": [
+      {
+        "thumb": "img/portfolio/thumbs/outros__1-91ce95.webp",
+        "full": "img/portfolio/full/outros__1-91ce95.webp",
+        "alt": "Outros Serviços - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/outros__2-6b8378.webp",
+        "full": "img/portfolio/full/outros__2-6b8378.webp",
+        "alt": "Outros Serviços - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/outros__3-7771d8.webp",
+        "full": "img/portfolio/full/outros__3-7771d8.webp",
+        "alt": "Outros Serviços - Liscano Faz Tudo"
+      },
+      {
+        "thumb": "img/portfolio/thumbs/outros__4-519149.webp",
+        "full": "img/portfolio/full/outros__4-519149.webp",
+        "alt": "Outros Serviços - Liscano Faz Tudo"
+      }
+    ]
+  }
+};

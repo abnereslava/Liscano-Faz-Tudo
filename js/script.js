@@ -39,33 +39,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Lightbox for Portfolio
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const closeLightbox = document.querySelector('.close-lightbox');
-const portfolioItems = document.querySelectorAll('.portfolio-item');
-
-portfolioItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const imgSrc = item.querySelector('img').src;
-        lightbox.style.display = 'block';
-        lightboxImg.src = imgSrc;
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    });
-});
-
-closeLightbox.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-    document.body.style.overflow = 'auto';
-});
-
-window.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-});
-
 // Testimonials Slider
 let slideIndex = 0;
 const slides = document.querySelectorAll('.depoimento-card');

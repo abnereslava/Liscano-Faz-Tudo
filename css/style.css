@@ -207,7 +207,7 @@ img {
 .hero {
     height: 100vh;
     min-height: 600px;
-    background: url('https://images.unsplash.com/photo-1581141849291-1125c7b692b5?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    background: url('../img/hero horizontal1.png') center/cover no-repeat;
     position: relative;
     display: flex;
     align-items: center;
@@ -289,6 +289,11 @@ img {
     position: relative;
     z-index: 1;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    aspect-ratio: 5 / 4;        /* casa com a foto paisagem (sem corte, sem ficar alta) */
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .sobre-texto {
@@ -813,4 +818,142 @@ img {
     .sobre, .servicos, .portfolio, .instagram, .depoimentos, .contato-atuacao {
         padding: 60px 0;
     }
+}
+
+/* ============================================================
+   SEÇÃO UNIFICADA: SERVIÇOS & TRABALHOS  (galeria por categoria)
+   ============================================================ */
+.trabalhos { padding: 100px 0; background-color: var(--light-bg); }
+
+.servicos-trabalhos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.st-card {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    min-height: 280px;
+    cursor: pointer;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,.12);
+    transition: var(--transition);
+}
+.st-card:hover { transform: translateY(-6px); box-shadow: 0 14px 30px rgba(0,0,0,.22); }
+
+.st-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(11,11,11,.92) 0%, rgba(11,11,11,.45) 45%, rgba(11,11,11,.05) 100%);
+    transition: var(--transition);
+}
+.st-card:hover::before { background: linear-gradient(to top, rgba(11,11,11,.95) 0%, rgba(11,11,11,.6) 55%, rgba(11,11,11,.2) 100%); }
+
+.st-card-body { position: relative; z-index: 1; padding: 24px; }
+
+.st-card .st-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--primary-color); color: var(--secondary-color);
+    font-size: 1.8rem; margin-bottom: 14px;
+}
+.st-card h3 { color: var(--white); font-size: 1.45rem; margin-bottom: 8px; }
+.st-card p { font-size: .92rem; font-weight: 300; opacity: .92; margin-bottom: 14px; }
+
+.st-card .st-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 600; color: var(--primary-color); font-size: .95rem;
+}
+.st-card .st-cta i { transition: var(--transition); }
+.st-card:hover .st-cta i { transform: translateX(5px); }
+
+.st-badge {
+    position: absolute; top: 16px; right: 16px; z-index: 1;
+    font-size: .78rem; font-weight: 700; padding: 5px 12px; border-radius: 20px;
+}
+
+/* Card de categoria sem fotos ainda */
+.st-card.st-em-breve {
+    cursor: default;
+    background: linear-gradient(160deg, #2a2a2a 0%, #0b0b0b 100%);
+}
+.st-card.st-em-breve:hover { transform: none; box-shadow: 0 6px 18px rgba(0,0,0,.12); }
+.st-card.st-em-breve::before { background: none; }
+.st-card.st-em-breve .st-icon { background: rgba(255,208,0,.18); color: var(--primary-color); }
+.st-card.st-em-breve p { opacity: .7; }
+.st-badge-breve { background: var(--primary-color); color: var(--secondary-color); }
+
+/* Modal galeria por categoria */
+.galeria-modal {
+    display: none; position: fixed; inset: 0; z-index: 1050;
+    background: rgba(11,11,11,.6); backdrop-filter: blur(4px);
+}
+.galeria-modal.aberto { display: block; }
+.galeria-painel {
+    position: absolute; inset: 0; margin: auto;
+    max-width: 1100px; width: 94%; max-height: 90vh; top: 5vh;
+    background: var(--white); border-radius: 16px; overflow: hidden;
+    display: flex; flex-direction: column;
+    animation: galSubir .3s ease;
+}
+@keyframes galSubir { from { transform: translateY(30px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.galeria-header {
+    display: flex; align-items: center; gap: 14px;
+    padding: 20px 24px; border-bottom: 1px solid #eee;
+}
+.galeria-header .st-icon { margin: 0; width: 46px; height: 46px; font-size: 1.5rem; }
+.galeria-header h3 { margin: 0; font-size: 1.3rem; }
+.galeria-header p { margin: 0; font-size: .85rem; color: #777; }
+.galeria-fechar {
+    margin-left: auto; background: none; border: none; cursor: pointer;
+    font-size: 2rem; line-height: 1; color: #999;
+}
+.galeria-fechar:hover { color: var(--secondary-color); }
+
+.galeria-grid {
+    padding: 20px 24px; overflow-y: auto;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+}
+.galeria-grid img {
+    width: 100%; aspect-ratio: 1; object-fit: cover;
+    border-radius: 10px; cursor: pointer; transition: var(--transition);
+    background: #eee;
+}
+.galeria-grid img:hover { transform: scale(1.04); }
+
+/* Lightbox */
+.galeria-lightbox {
+    display: none; position: fixed; inset: 0; z-index: 1100;
+    background: rgba(0,0,0,.92);
+    align-items: center; justify-content: center;
+}
+.galeria-lightbox.aberto { display: flex; }
+.galeria-lightbox img { max-width: 90%; max-height: 85vh; border-radius: 8px; }
+.pl-fechar { position: absolute; top: 24px; right: 32px; color: #fff; font-size: 2.6rem; cursor: pointer; }
+.pl-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    color: #fff; font-size: 3rem; cursor: pointer; padding: 0 20px; user-select: none;
+    opacity: .8; transition: var(--transition);
+}
+.pl-nav:hover { opacity: 1; }
+.pl-prev { left: 10px; } .pl-next { right: 10px; }
+.pl-contador { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); color: #fff; font-size: .9rem; }
+
+@media (max-width: 900px) {
+    .servicos-trabalhos-grid { grid-template-columns: repeat(2, 1fr); }
+    .galeria-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+    .trabalhos { padding: 60px 0; }
+    .servicos-trabalhos-grid { grid-template-columns: 1fr; }
+    .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+    .galeria-painel { width: 100%; height: 100%; max-height: 100vh; top: 0; border-radius: 0; }
 }
